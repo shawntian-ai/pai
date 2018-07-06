@@ -72,7 +72,8 @@ class VirtualCluster {
             const vcInfo = this.getCapacitySchedulerInfo(schedulerInfo);
             next(vcInfo, null);
           } else {
-            next(null, createError('Internal Server Error', 'ERR_BAD_CONFIGURATION', `Scheduler type ${schedulerInfo.type} is not supported.`));
+            next(null, createError('Internal Server Error', 'ERR_BAD_CONFIGURATION',
+              `Scheduler type ${schedulerInfo.type} is not supported.`));
           }
         } catch (error) {
           next(null, error);
